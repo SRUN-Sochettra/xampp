@@ -26,7 +26,7 @@ if (mysqli_num_rows($result) > 0) {
 	<td>No.</td>
     <td>First Name</td>
     <td>Last Name</td>
-	<td>Date of Birth</td>
+	  <td>Date of Birth</td>
     <td>City Name</td>
     <td>Email id</td>
 	<td>Contact_number</td>
