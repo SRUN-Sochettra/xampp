@@ -1,6 +1,6 @@
 <?php
 
-$dbhost = "localhost";
+$dbhost = "localhost:8080";
 $dbuser = "root";
 $dbpass = "";
 $dbname = "login_form";
