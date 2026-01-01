@@ -27,7 +27,7 @@
 				// Valid quantity
 			} else {
 				// Quantity is not a valid number
-				$errorAlert = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid number for quantity</div>';
+				$errorAlert = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខបរិមាណឱ្យបានត្រឹមត្រូវ។</div>';
 				$data = ['alertMessage' => $errorAlert];
 				echo json_encode($data);
 				exit();
@@ -38,7 +38,7 @@
 				// Valid unit price
 			} else {
 				// Unit price is not a valid number
-				$errorAlert = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid number for unit price</div>';
+				$errorAlert = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខតម្លៃឯកតាឱ្យបានត្រឹមត្រូវ។</div>';
 				$data = ['alertMessage' => $errorAlert];
 				echo json_encode($data);
 				exit();
@@ -48,7 +48,7 @@
 			if(!empty($discount)){
 				if(filter_var($discount, FILTER_VALIDATE_FLOAT) === false){
 					// Discount is not a valid floating point number
-					$errorAlert = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid discount amount</div>';
+					$errorAlert = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខប្រាក់ឯកតាឱ្យបានត្រឹមត្រូវ។</div>';
 					$data = ['alertMessage' => $errorAlert];
 					echo json_encode($data);
 					exit();
@@ -65,7 +65,7 @@
 				$newStock = $initialStock + $itemDetailsQuantity;
 			} else {
 				// Item is not in DB. Therefore, stop the update and quit
-				$errorAlert = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Item Number does not exist in DB. Therefore, update not possible.</div>';
+				$errorAlert = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>លេខកូដទំនិញមិនមាននៅក្នុង DB ទេ។ ដូច្នេះ ការធ្វើបច្ចុប្បន្នភាពមិនអាក្រក់បានទេ។</div>';
 				$data = ['alertMessage' => $errorAlert];
 				echo json_encode($data);
 				exit();
@@ -86,14 +86,14 @@
 			$updateItemInPurchaseTableSstatement = $conn->prepare($updateItemInPurchaseTableSql);
 			$updateItemInPurchaseTableSstatement->execute(['itemName' => $itemName, 'itemNumber' => $itemNumber]);
 			
-			$successAlert = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Item details updated.</div>';
+			$successAlert = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>ការធ្វើបច្ចុប្បន្នភាពទំនិញត្រូវបានបញ្ចប់។</div>';
 			$data = ['alertMessage' => $successAlert, 'newStock' => $newStock];
 			echo json_encode($data);
 			exit();
 			
 		} else {
 			// One or more mandatory fields are empty. Therefore, display the error message
-			$errorAlert = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter all fields marked with a (*)</div>';
+			$errorAlert = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលទំនុកចិត្តទាំងអស់ដែលបានសម្គាល់ដោយផ្ទាល់។</div>';
 			$data = ['alertMessage' => $errorAlert];
 			echo json_encode($data);
 			exit();

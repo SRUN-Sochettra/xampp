@@ -20,7 +20,7 @@
 				// Valid mobile number
 			} else {
 				// Mobile is wrong
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid phone number</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខទូរស័ព្ទឱ្យបានត្រឹមត្រូវ។</div>';
 				exit();
 			}
 			
@@ -28,7 +28,7 @@
 			if(!empty($phone2)){
 				if(filter_var($phone2, FILTER_VALIDATE_INT) === false) {
 					// Phone number 2 is not valid
-					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid mobile number 2</div>';
+					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខទូរស័ព្ទ 2 ឱ្យបានត្រឹមត្រូវ។</div>';
 					exit();
 				}
 			}
@@ -37,7 +37,7 @@
 			if(!empty($email)) {
 				if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
 					// Email is not valid
-					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid email</div>';
+					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលអ៊ីមែលដែលត្រឹមត្រូវ។</div>';
 					exit();
 				}
 			}
@@ -45,14 +45,14 @@
 			// Validate address
 			if($address == ''){
 				// Address 1 is empty
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter Address 1</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលអាសយដ្ឋានទី 1។</div>';
 				exit();
 			}
 			
 			// Check if Full name is empty or not
 			if($fullName == ''){
 				// Full Name is empty
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter Full Name.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលឈ្មោះពេញ។</div>';
 				exit();
 			}
 			
@@ -60,10 +60,10 @@
 			$sql = 'INSERT INTO customer(fullName, email, mobile, phone2, address, address2, city, district, status) VALUES(:fullName, :email, :mobile, :phone2, :address, :address2, :city, :district, :status)';
 			$stmt = $conn->prepare($sql);
 			$stmt->execute(['fullName' => $fullName, 'email' => $email, 'mobile' => $mobile, 'phone2' => $phone2, 'address' => $address, 'address2' => $address2, 'city' => $city, 'district' => $district, 'status' => $status]);
-			echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Customer added to database</div>';
+			echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>អតិថិជនត្រូវបានបញ្ចូលទៅក្នុង DB។</div>';
 		} else {
 			// One or more fields are empty
-			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter all fields marked with a (*)</div>';
+			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលទាំងអស់នៅក្នុងវាលដែលត្រូវបានសម្គាល់ដោយ (*)</div>';
 			exit();
 		}
 	}

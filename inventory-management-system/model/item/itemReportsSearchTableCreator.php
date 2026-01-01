@@ -9,14 +9,14 @@
 	$output = '<table id="itemReportsTable" class="table table-sm table-striped table-bordered table-hover" style="width:100%">
 				<thead>
 					<tr>
-						<th>Product ID</th>
-						<th>Item Number</th>
-						<th>Item Name</th>
-						<th>Discount %</th>
-						<th>Stock</th>
-						<th>Unit Price</th>
-						<th>Status</th>
-						<th>Description</th>
+						<th>អត្តសញ្ញាណប័ណ្ណផលិតផល</th>
+						<th>លេខកូដទំនិញ</th>
+						<th>ឈ្មោះទំនិញ</th>
+						<th>ប្រាក់ឯកតា %</th>
+						<th>បរិមាណ</th>
+						<th>តម្លៃឯកតា</th>
+						<th>ស្ថានភាព</th>
+						<th>ការពិពណ៌នា</th>
 					</tr>
 				</thead>
 				<tbody>';
@@ -41,14 +41,14 @@
 	$output .= '</tbody>
 					<tfoot>
 						<tr>
-							<th>Product ID</th>
-							<th>Item Number</th>
-							<th>Item Name</th>
-							<th>Discount %</th>
-							<th>Stock</th>
-							<th>Unit Price</th>
-							<th>Status</th>
-							<th>Description</th>
+							<th>អត្តសញ្ញាណប័ណ្ណផលិតផល</th>
+							<th>លេខកូដទំនិញ</th>
+							<th>ឈ្មោះទំនិញ</th>
+							<th>ប្រាក់ឯកតា %</th>
+							<th>បរិមាណ</th>
+							<th>តម្លៃឯកតា</th>
+							<th>ស្ថានភាព</th>
+							<th>ការពិពណ៌នា</th>
 						</tr>
 					</tfoot>
 				</table>';

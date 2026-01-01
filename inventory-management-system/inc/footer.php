@@ -1,7 +1,7 @@
     <!-- Footer -->
     <footer class="footer bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Inventory System <?php echo date('Y'); ?></p>
+        <p class="m-0 text-center text-white">Copyright &copy; ប្រព័ន្ធគ្រប់គ្រងសារពើភ័ណ្ឌសាកលវិទ្យាល័យ​<?php echo date('Y'); ?></p>
       </div>
     </footer>
 

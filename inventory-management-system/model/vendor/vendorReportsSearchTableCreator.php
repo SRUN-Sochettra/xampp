@@ -9,16 +9,16 @@
 	$output = '<table id="vendorReportsTable" class="table table-sm table-striped table-bordered table-hover" style="width:100%">
 				<thead>
 					<tr>
-						<th>Vendor ID</th>
-						<th>Full Name</th>
-						<th>Email</th>
-						<th>Mobile</th>
-						<th>Phone 2</th>
-						<th>Address</th>
-						<th>Address 2</th>
-						<th>City</th>
-						<th>District</th>
-						<th>Status</th>
+						<th>អត្តសញ្ញាណប័ណ្ណអ្នកផ្គត់ផ្គង់</th>
+						<th>ឈ្មោះពេញ</th>
+						<th>អាសយដ្ឋានអ៊ីមែល</th>
+						<th>ទូរស័ព្ទចល័ត</th>
+						<th>ទូរស័ព្ទទី២</th>
+						<th>អាសយដ្ឋាន</th>
+						<th>អាសយដ្ឋាន 2</th>
+						<th>ក្រុង</th>
+						<th>ខេត្ត</th>
+						<th>ស្ថានភាព</th>
 					</tr>
 				</thead>
 				<tbody>';
@@ -44,16 +44,16 @@
 	$output .= '</tbody>
 					<tfoot>
 						<tr>
-							<th>Vendor ID</th>
-							<th>Full Name</th>
-							<th>Email</th>
-							<th>Mobile</th>
-							<th>Phone 2</th>
-							<th>Address</th>
-							<th>Address 2</th>
-							<th>City</th>
-							<th>District</th>
-							<th>Status</th>
+							<th>អត្តសញ្ញាណប័ណ្ណអ្នកផ្គត់ផ្គង់</th>
+							<th>ឈ្មោះពេញ</th>
+							<th>អាសយដ្ឋានអ៊ីមែល</th>
+							<th>ទូរស័ព្ទចល័ត</th>
+							<th>ទូរស័ព្ទទី២</th>
+							<th>អាសយដ្ឋាន</th>
+							<th>អាសយដ្ឋាន 2</th>
+							<th>ក្រុង</th>
+							<th>ខេត្ត</th>
+							<th>ស្ថានភាព</th>
 						</tr>
 					</tfoot>
 				</table>';

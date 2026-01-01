@@ -27,14 +27,14 @@
 					// Mobile number is valid
 				} else {
 					// Mobile number is not valid
-					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid mobile number</div>';
+					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខទូរស័ព្ទចល័តឱ្យបានត្រឹមត្រូវ។</div>';
 					exit();
 				}
 				
 				// Check if vendorID field is empty. If so, display an error message
 				// We have to specifically tell this to user because the (*) mark is not added to that field
 				if(empty($vendorDetailsVendorID)){
-					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter the Vendor ID to update that vendor. You can find the Vendor ID using the Search tab</div>';
+					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលអត្តសញ្ញាណប័ណ្ណអ្នកផ្គត់ផ្គង់ (Vendor ID) ដើម្បីធ្វើបច្ចុប្បន្នភាពអ្នកផ្គត់ផ្គង់នោះ។ អ្នកអាចស្វែងរកអត្តសញ្ញាណប័ណ្ណអ្នកផ្គត់ផ្គង់បាន តាមរយៈផ្ទាំងស្វែងរក (Search tab)។</div>';
 					exit();
 				}
 				
@@ -44,7 +44,7 @@
 						// Phone number 2 is valid
 					} else {
 						// Phone number 2 is not valid
-						echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid number for phone number 2.</div>';
+						echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខទូរស័ព្ទទី២ឱ្យបានត្រឹមត្រូវ។</div>';
 						exit();
 					}
 				}
@@ -53,7 +53,7 @@
 				if(!empty($vendorDetailsVendorEmail)) {
 					if (filter_var($vendorDetailsVendorEmail, FILTER_VALIDATE_EMAIL) === false) {
 						// Email is not valid
-						echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid email</div>';
+						echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលអាសយដ្ឋានអ៊ីមែលឱ្យបានត្រឹមត្រូវ។</div>';
 						exit();
 					}
 				}
@@ -82,22 +82,22 @@
 					$updateVendorInPurchaseTableStatement = $conn->prepare($updateVendorInPurchaseTableSql);
 					$updateVendorInPurchaseTableStatement->execute(['vendorName' => $vendorDetailsVendorFullName, 'vendorID' => $vendorDetailsVendorID]);
 					
-					echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Vendor details updated.</div>';
+					echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>ព័ត៌មានលម្អិតរបស់អ្នកផ្គត់ផ្គង់ត្រូវបានធ្វើបច្ចុប្បន្នភាព។</div>';
 					exit();
 				} else {
 					// vendorID is not in DB. Therefore, stop the update and quit
-					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Vendor ID does not exist in DB. Therefore, update not possible.</div>';
+					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>អ្នកផ្គត់ផ្គង់មិនមានក្នុងមូលដ្ឋានទិន្នន័យទេ។ ដូច្នេះ មិនអាចធ្វើបច្ចុប្បន្នភាពបានទេ។</div>';
 					exit();
 				}
 				
 			} else {
 				// One or more mandatory fields are empty. Therefore, display the error message
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter all fields marked with a (*)</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបំពេញរាល់ប្រឡោះដែលមានសញ្ញា (*)។</div>';
 				exit();
 			}
 		} else {
 			// vendorID is not given by user. Hence, can't update
-			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter the Vendor ID to update that vendor. You can find the Vendor ID using the Search tab</div>';
+			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលអត្តសញ្ញាណប័ណ្ណអ្នកផ្គត់ផ្គង់ (Vendor ID) ដើម្បីធ្វើបច្ចុប្បន្នភាពអ្នកផ្គត់ផ្គង់នោះ។ អ្នកអាចស្វែងរកអត្តសញ្ញាណប័ណ្ណអ្នកផ្គត់ផ្គង់បាន តាមរយៈផ្ទាំងស្វែងរក (Search tab)។</div>';
 			exit();
 		}
 	}

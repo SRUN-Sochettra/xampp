@@ -24,18 +24,18 @@
 				$deleteVendorStatement = $conn->prepare($deleteVendorSql);
 				$deleteVendorStatement->execute(['vendorID' => $vendorDetailsVendorID]);
 
-				echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Vendor deleted.</div>';
+				echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>អ្នកផ្គត់ផ្គង់ត្រូវបានលុបចោល។</div>';
 				exit();
 				
 			} else {
 				// Vendor does not exist, therefore, tell the user that he can't delete that vendor 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Vendor does not exist in DB. Therefore, can\'t delete.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>អ្នកផ្គត់ផ្គង់មិនមានក្នុងមូលដ្ឋានទិន្នន័យទេ។ ដូច្នេះ មិនអាចលុបបានទេ។</div>';
 				exit();
 			}
 			
 		} else {
 			// vendorDI is empty. Therefore, display the error message
-			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter the Vendor ID</div>';
+			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលអត្តសញ្ញាណប័ណ្ណអ្នកផ្គត់ផ្គង់</div>';
 			exit();
 		}
 	}

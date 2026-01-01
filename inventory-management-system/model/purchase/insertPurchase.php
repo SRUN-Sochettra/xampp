@@ -19,25 +19,25 @@
 			
 			// Check if itemNumber is empty
 			if($purchaseDetailsItemNumber == ''){ 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter Item Number.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខកូដទំនិញ។</div>';
 				exit();
 			}
 			
 			// Check if itemName is empty
 			if($purchaseDetailsItemName == ''){ 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter Item Name.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលឈ្មោះទំនិញ។</div>';
 				exit();
 			}
 			
 			// Check if quantity is empty
 			if($purchaseDetailsQuantity == ''){ 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter Quantity.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលបរិមាណ។</div>';
 				exit();
 			}
 			
 			// Check if unit price is empty
 			if($purchaseDetailsUnitPrice == ''){ 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter Unit Price.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលតម្លៃឯកតា។</div>';
 				exit();
 			}
 			
@@ -49,7 +49,7 @@
 				// Valid quantity
 			} else {
 				// Quantity is not a valid number
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid number for quantity.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខបរិមាណដែលត្រឹមត្រូវ។</div>';
 				exit();
 			}
 			
@@ -58,7 +58,7 @@
 				// Valid unit price
 			} else {
 				// Unit price is not a valid number
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid number for unit price.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខតម្លៃឯកតាដែលត្រឹមត្រូវ។</div>';
 				exit();
 			}
 			
@@ -91,19 +91,19 @@
 				$updateStockStatement = $conn->prepare($updateStockSql);
 				$updateStockStatement->execute(['stock' => $newStock, 'itemNumber' => $purchaseDetailsItemNumber]);
 				
-				echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Purchase details added to database and stock values updated.</div>';
+				echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>ការបញ្ជាក់ទំនិញត្រូវបានបញ្ចូលទៅក្នុងមូលដ្ឋានទិន្នន័យ និងតម្លៃស្តុកត្រូវបានធ្វើបច្ចុប្បន្នភាព។</div>';
 				exit();
 				
 			} else {
 				// Item does not exist in item table, therefore, you can't make a purchase from it 
 				// to add it to DB as a new purchase
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Item does not exist in DB. Therefore, first enter this item to DB using the <strong>Item</strong> tab.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>ទំនិញមិនមាននៅក្នុងមូលដ្ឋានទិន្នន័យ (Database) ទេ។ ដូច្នោះហើយ សូមបញ្ចូលទំនិញនេះទៅក្នុងមូលដ្ឋានទិន្នន័យជាមុនសិន ដោយប្រើផ្ទាំង <stromng>Item</strong>។</div>';
 				exit();
 			}
 
 		} else {
 			// One or more mandatory fields are empty. Therefore, display a the error message
-			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter all fields marked with a (*)</div>';
+			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលទំនិញទាំងអស់ដែលត្រូវបានសម្គាល់ដោយ ( * )</div>';
 			exit();
 		}
 	}

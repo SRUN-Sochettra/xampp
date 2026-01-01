@@ -9,16 +9,16 @@
 	$output = '<table id="customerDetailsTable" class="table table-sm table-striped table-bordered table-hover" style="width:100%">
 				<thead>
 					<tr>
-						<th>Customer ID</th>
-						<th>Full Name</th>
-						<th>Email</th>
-						<th>Mobile</th>
-						<th>Phone 2</th>
-						<th>Address</th>
-						<th>Address 2</th>
-						<th>City</th>
-						<th>District</th>
-						<th>Status</th>
+						<th>អត្តសញ្ញាណប័ណ្ណអតិថិជន</th>
+						<th>ឈ្មោះពេញ</th>
+						<th>អ៊ីមែល</th>
+						<th>ទូរសព្ទ</th>
+						<th>ទូរសព្ទ 2</th>
+						<th>អាសយដ្ឋាន</th>
+						<th>អាសយដ្ឋានទី 2</th>
+						<th>ក្រុង</th>
+						<th>ខេត្ត</th>
+						<th>ស្ថានភាព</th>
 					</tr>
 				</thead>
 				<tbody>';
@@ -44,16 +44,16 @@
 	$output .= '</tbody>
 					<tfoot>
 						<tr>
-							<th>Customer ID</th>
-							<th>Full Name</th>
-							<th>Email</th>
-							<th>Mobile</th>
-							<th>Phone 2</th>
-							<th>Address</th>
-							<th>Address 2</th>
-							<th>City</th>
-							<th>District</th>
-							<th>Status</th>
+							<th>អត្តសញ្ញាណប័ណ្ណអតិថិជន</th>
+							<th>ឈ្មោះពេញ</th>
+							<th>អ៊ីមែល</th>
+							<th>ទូរសព្ទ</th>
+							<th>ទូរសព្ទ 2</th>
+							<th>អាសយដ្ឋាន</th>
+							<th>អាសយដ្ឋានទី 2</th>
+							<th>ក្រុង</th>
+							<th>ខេត្ត</th>
+							<th>ស្ថានភាព</th>
 						</tr>
 					</tfoot>
 				</table>';

@@ -32,7 +32,7 @@
 				// Quantity is valid
 			} else {
 				// Quantity is not a valid number
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid number for quantity.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលចំនួនបរិមាណឱ្យបានត្រឹមត្រូវ។</div>';
 				exit();
 			}
 			
@@ -41,25 +41,25 @@
 				// Valid unit price
 			} else {
 				// Unit price is not a valid number
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid number for unit price.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលតម្លៃឯកតាថ្លែមិនត្រឹមត្រូវ។</div>';
 				exit();
 			}
 			
 			// Check if purchaseID is empty
 			if($purchaseDetailsPurchaseID == ''){ 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a Purchase ID.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលអត្តសញ្ញាណប័ណ្ណនៃការទិញ (Purchase ID)។</div>';
 				exit();
 			}
 			
 			// Check if itemNumber is empty
 			if($purchaseDetailsItemNumber == ''){ 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter Item Number.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខកូដទំនិញ។</div>';
 				exit();
 			}
 			
 			// Check if quantity is empty
 			if($purchaseDetailsQuantity == ''){ 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter quantity.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលបរិមាណ។</div>';
 				exit();
 			}
 			
@@ -97,7 +97,7 @@
 					
 					if($newItemCurrentStockStatement->rowCount() < 1){
 						// Item number is not in DB. Hence abort.
-						echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Item Number does not exist in DB. If you want to update this item, please add it to DB first.</div>';
+						echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>លេខកូដទំនិញមិនមាននៅក្នុង DB ។ ប្រសិនបើអ្នកចង់ធ្វើការធ្វើបច្ចុប្បន្នភាពទំនិញនោះ សូមបញ្ចូលទំនិញទៅក្នុង DB ។</div>';
 						exit();
 					}
 					
@@ -132,7 +132,7 @@
 					$updatePurchaseDetailsStatement = $conn->prepare($updatePurchaseDetailsSql);
 					$updatePurchaseDetailsStatement->execute(['itemNumber' => $purchaseDetailsItemNumber, 'purchaseDate' => $purchaseDetailsPurchaseDate, 'itemName' => $purchaseDetailsItemName, 'unitPrice' => $purchaseDetailsUnitPrice, 'quantity' => $purchaseDetailsQuantity, 'vendorName' => $purchaseDetailsVendorName, 'vendorID' => $vendorID, 'purchaseID' => $purchaseDetailsPurchaseID]);
 					
-					echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Purchase details added to database and stock values updated.</div>';
+					echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>ការពិតប្រាកដនៃការទិញត្រូវបានបញ្ចូលទៅក្នុង DB និងតម្លៃស្តុកត្រូវបានធ្វើបច្ចុប្បន្នភាព។</div>';
 					exit();
 					
 				} else {
@@ -162,13 +162,13 @@
 						$updatePurchaseDetailsStatement = $conn->prepare($updatePurchaseDetailsSql);
 						$updatePurchaseDetailsStatement->execute(['purchaseDate' => $purchaseDetailsPurchaseDate, 'unitPrice' => $purchaseDetailsUnitPrice, 'quantity' => $purchaseDetailsQuantity, 'vendorName' => $purchaseDetailsVendorName, 'vendorID' => $vendorID, 'purchaseID' => $purchaseDetailsPurchaseID]);
 						
-						echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Purchase details added to database and stock values updated.</div>';
+						echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>ការពិតប្រាកដនៃការទិញត្រូវបានបញ្ចូលទៅក្នុង DB និងតម្លៃស្តុកត្រូវបានធ្វើបច្ចុប្បន្នភាព។</div>';
 						exit();
 						
 					} else {
 						// Item does not exist in item table, therefore, you can't update 
 						// purchase details for it 
-						echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Item does not exist in DB. Therefore, first enter this item to DB using the <strong>Item</strong> tab.</div>';
+						echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>ទំនិញមិនមាននៅក្នុងមូលដ្ឋានទិន្នន័យ (Database) ទេ។ ដូច្នោះហើយ សូមបញ្ចូលទំនិញនេះទៅក្នុងមូលដ្ឋានទិន្នន័យជាមុនសិន ដោយប្រើផ្ទាំង <strong>Item</strong>។</div>';
 						exit();
 					}	
 					
@@ -177,14 +177,14 @@
 			} else {
 				
 				// PurchaseID does not exist in purchase table, therefore, you can't update it 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Purchase details does not exist in DB for the given Purchase ID. Therefore, can\'t update.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>ការពិតប្រាកដនៃការទិញមិនមាននៅក្នុង DB ។ ដូច្នោះហើយ អ្នកមិនអាចធ្វើបច្ចុប្បន្នភាពបានទេ។</div>';
 				exit();
 				
 			}
 
 		} else {
 			// One or more mandatory fields are empty. Therefore, display the error message
-			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter all fields marked with a (*)</div>';
+			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលទំនិញនៅក្នុងទំនាក់ទំនាក់។</div>';
 			exit();
 		}
 	}

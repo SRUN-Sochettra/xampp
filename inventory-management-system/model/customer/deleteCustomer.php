@@ -24,18 +24,18 @@
 				$deleteCustomerStatement = $conn->prepare($deleteCustomerSql);
 				$deleteCustomerStatement->execute(['customerID' => $customerDetailsCustomerID]);
 
-				echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Customer deleted.</div>';
+				echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>អតិថិជនត្រូវបានលុប។</div>';
 				exit();
 				
 			} else {
 				// Customer does not exist, therefore, tell the user that he can't delete that customer 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Customer does not exist in DB. Therefore, can\'t delete.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>អតិថិជនមិនមាននៅក្នុង DB ទេ។ ដូច្នេះ គាត់មិនអាក្រក់បានទេ។</div>';
 				exit();
 			}
 			
 		} else {
 			// CustomerID is empty. Therefore, display the error message
-			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter the CustomerID</div>';
+			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខកូដអតិថិជន។</div>';
 			exit();
 		}
 	}

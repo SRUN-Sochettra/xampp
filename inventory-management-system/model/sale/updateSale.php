@@ -31,7 +31,7 @@
 				// Quantity is valid
 			} else {
 				// Quantity is not a valid number
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid number for Quantity.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលចំនួនបរិមាណឱ្យបានត្រឹមត្រូវ។</div>';
 				exit();
 			}
 			
@@ -40,7 +40,7 @@
 				// Valid unit price
 			} else {
 				// Unit price is not a valid number
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid number for Unit Price.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលតម្លៃឯកតាឱ្យបានត្រឹមត្រូវ។</div>';
 				exit();
 			}
 			
@@ -50,38 +50,38 @@
 				// Valid discount
 				} else {
 					// Discount is not a valid number
-					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid number for Discount.</div>';
+					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលចំនួនទឹកប្រាក់បញ្ចុះតម្លៃឱ្យបានត្រឹមត្រូវ។</div>';
 					exit();
 				}
 			}
 			
 			// Check if saleID is empty
 			if($saleDetailsSaleID == ''){ 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a Sale ID.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលអត្តសញ្ញាណប័ណ្ណនៃការលក់ (Sale ID)។</div>';
 				exit();
 			}
 			
 			// Check if customerID is empty
 			if($saleDetailsCustomerID == ''){ 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a Customer ID.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលអត្តសញ្ញាណប័ណ្ណអតិថិជន (Customer ID)។</div>';
 				exit();
 			}
 			
 			// Check if itemNumber is empty
 			if($saleDetailsItemNumber == ''){ 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter Item Number.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខកូដទំនិញ (Item Number)។</div>';
 				exit();
 			}
 			
 			// Check if quantity is empty
 			if($saleDetailsQuantity == ''){ 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter quantity.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលបរិមាណ។</div>';
 				exit();
 			}
 			
 			// Check if unit price is empty
 			if($saleDetailsUnitPrice == ''){ 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter Unit Price.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលតម្លៃឯកតា។</div>';
 				exit();
 			}
 			
@@ -103,7 +103,7 @@
 			
 			if($customerIDStatement->rowCount() < 1){
 				// Customer id is wrong
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Customer ID does not exist in DB. Please enter a valid Customer ID.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>អត្តសញ្ញាណប័ណ្ណអតិថិជនមិនមាននៅក្នុងមូលដ្ឋានទិន្នន័យ (Database) ទេ។ សូមបញ្ចូលអត្តសញ្ញាណប័ណ្ណអតិថិជនឱ្យបានត្រឹមត្រូវ។</div>';
 				exit();
 			} else {
 				$row = $customerIDStatement->fetch(PDO::FETCH_ASSOC);
@@ -133,7 +133,7 @@
 					
 					if($newItemCurrentStockStatement->rowCount() < 1){
 						// Item number is not in DB. Hence abort.
-						echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Item Number does not exist in DB. If you want to update this item, please add it to DB first.</div>';
+						echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>លេខកូដទំនិញមិនមាននៅក្នុងមូលដ្ឋានទិន្នន័យ (Database) ទេ។ ប្រសិនបើអ្នកចង់ធ្វើការផ្លាស់ប្ដូរទំនិញនោះ សូមបញ្ចូលទំនិញចុងក្រោយទៅកាន់មូលដ្ឋានទិន្នន័យ។</div>';
 						exit();
 					}
 					
@@ -168,7 +168,7 @@
 					$updateSaleDetailsStatement = $conn->prepare($updateSaleDetailsSql);
 					$updateSaleDetailsStatement->execute(['itemNumber' => $saleDetailsItemNumber, 'saleDate' => $saleDetailsSaleDate, 'itemName' => $saleDetailsItemName, 'unitPrice' => $saleDetailsUnitPrice, 'discount' => $saleDetailsDiscount, 'quantity' => $saleDetailsQuantity, 'customerName' => $saleDetailsCustomerName, 'customerID' => $customerID, 'saleID' => $saleDetailsSaleID]);
 					
-					echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Sale details updated.</div>';
+					echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>ព័ត៌មានលម្អិតនៃការលក់ត្រូវបានធ្វើបច្ចុប្បន្នភាព។</div>';
 					exit();
 					
 				} else {
@@ -198,13 +198,13 @@
 						$updateSaleDetailsStatement = $conn->prepare($updateSaleDetailsSql);
 						$updateSaleDetailsStatement->execute(['itemNumber' => $saleDetailsItemNumber, 'saleDate' => $saleDetailsSaleDate, 'itemName' => $saleDetailsItemName, 'unitPrice' => $saleDetailsUnitPrice, 'discount' => $saleDetailsDiscount, 'quantity' => $saleDetailsQuantity, 'customerName' => $saleDetailsCustomerName, 'customerID' => $customerID, 'saleID' => $saleDetailsSaleID]);
 						
-						echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Sale details updated.</div>';
+						echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>ព័ត៌មានលម្អិតនៃការលក់ត្រូវបានធ្វើបច្ចុប្បន្នភាព។</div>';
 						exit();
 						
 					} else {
 						// Item does not exist in item table, therefore, you can't update 
 						// sale details for it 
-						echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Item does not exist in DB. Therefore, first enter this item to DB using the <strong>Item</strong> tab.</div>';
+						echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>ទំនិញមិនមាននៅក្នុងមូលដ្ឋានទិន្នន័យ (Database) ទេ។ ដូច្នោះហើយ សូមបញ្ចូលទំនិញនេះទៅក្នុងមូលដ្ឋានទិន្នន័យជាមុនសិន ដោយប្រើផ្ទាំង <strong>Item</strong>។.</div>';
 						exit();
 					}	
 					
@@ -213,14 +213,14 @@
 			} else {
 				
 				// SaleID does not exist in purchase table, therefore, you can't update it 
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Sale details does not exist in DB for the given Sale ID. Therefore, can\'t update.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>ព័ត៌មានលម្អិតនៃការលក់មិនមាននៅក្នុងមូលដ្ឋានទិន្នន័យ (Database) ទេ។ ដូច្នោះហើយ សូមបញ្ចូលព័ត៌មានលម្អិតនៃការលក់ចុងក្រោយទៅកាន់មូលដ្ឋានទិន្នន័យ។</div>';
 				exit();
 				
 			}
 
 		} else {
 			// One or more mandatory fields are empty. Therefore, display the error message
-			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter all fields marked with a (*)</div>';
+			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបំពេញព័ត៌មានគ្រប់ប្រឡោះដែលសម្គាល់ដោយសញ្ញា (*)។</div>';
 			exit();
 		}
 	}

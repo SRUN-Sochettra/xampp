@@ -24,14 +24,14 @@
 				// Mobile number is valid
 			} else {
 				// Mobile number is not valid
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid mobile number</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខទូរស័ព្ទឱ្យបានត្រឹមត្រូវ។</div>';
 				exit();
 			}
 			
 			// Check if CustomerID field is empty. If so, display an error message
 			// We have to specifically tell this to user because the (*) mark is not added to that field
 			if(empty($customerDetailsCustomerID)){
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter the CustomerID to update that customer.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខកូដអតិថិជនដើម្បីធ្វើការបន្ថែមអតិថិជន។</div>';
 				exit();
 			}
 			
@@ -41,7 +41,7 @@
 					// Phone number 2 is valid
 				} else {
 					// Phone number 2 is not valid
-					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid number for phone number 2.</div>';
+					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខទូរស័ព្ទ 2 ឱ្យបានត្រឹមត្រូវ។</div>';
 					exit();
 				}
 			}
@@ -50,7 +50,7 @@
 			if(!empty($customerDetailsCustomerEmail)) {
 				if (filter_var($customerDetailsCustomerEmail, FILTER_VALIDATE_EMAIL) === false) {
 					// Email is not valid
-					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid email</div>';
+					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលអ៊ីមែលដែលត្រឹមត្រូវ។</div>';
 					exit();
 				}
 			}
@@ -73,17 +73,17 @@
 				$updateCustomerInSaleTableStatement = $conn->prepare($updateCustomerInSaleTableSql);
 				$updateCustomerInSaleTableStatement->execute(['customerName' => $customerDetailsCustomerFullName, 'customerID' => $customerDetailsCustomerID]);
 				
-				echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Customer details updated.</div>';
+				echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>ព័ត៌មានលម្អិតរបស់អតិថិជនត្រូវបានធ្វើបច្ចុប្បន្នភាព។</div>';
 				exit();
 			} else {
 				// CustomerID is not in DB. Therefore, stop the update and quit
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>CustomerID does not exist in DB. Therefore, update not possible.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>អត្តសញ្ញាណប័ណ្ណអតិថិជន (CustomerID) មិនមាននៅក្នុងមូលដ្ឋានទិន្នន័យ (Database) ទេ។ ដូច្នោះហើយ មិនអាចធ្វើបច្ចុប្បន្នភាពបានទេ។</div>';
 				exit();
 			}
 			
 		} else {
 			// One or more mandatory fields are empty. Therefore, display the error message
-			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter all fields marked with a (*)</div>';
+			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលព័ត៌មានក្នុងប្រអប់ទាំងអស់ដែលមានសញ្ញា (* )។</div>';
 			exit();
 		}
 	}

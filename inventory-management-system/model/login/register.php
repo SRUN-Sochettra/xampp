@@ -21,19 +21,19 @@
 			
 			// Check if name is empty
 			if($registerFullName == ''){
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter your name.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលឈ្មោះរបស់អ្នក</div>';
 				exit();
 			}
 			
 			// Check if username is empty
 			if($registerUsername == ''){
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter your username.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលឈ្មោះអ្នកប្រើ</div>';
 				exit();
 			}
 			
 			// Check if both passwords are empty
 			if($registerPassword1 == '' || $registerPassword2 == ''){
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter both passwords.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលពាក្យសម្ងាត់ទាំងពីរ</div>';
 				exit();
 			}
 			
@@ -44,12 +44,12 @@
 			
 			if($usernameCheckingStatement->rowCount() > 0){
 				// Username already exists. Hence can't create a new user
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Username not available. Please select a different username.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>ឈ្មោះអ្នកប្រើនេះមិនអាចប្រើបានទេ។ សូមជ្រើសរើសឈ្មោះអ្នកប្រើផ្សេងទៀត</div>';
 				exit();
 			} else {
 				// Check if passwords are equal
 				if($registerPassword1 !== $registerPassword2){
-					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Passwords do not match.</div>';
+					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>ពាក្យសម្ងាត់មិនត្រូវគ្នា</div>';
 					exit();
 				} else {
 					// Start inserting user to DB
@@ -59,13 +59,13 @@
 					$insertUserStatement = $conn->prepare($insertUserSql);
 					$insertUserStatement->execute(['fullName' => $registerFullName, 'username' => $registerUsername, 'password' => $hashedPassword]);
 					
-					echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Registration complete.</div>';
+					echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>ការចុះឈ្មោះបានបញ្ចប់ដោយជោគជ័យ</div>';
 					exit();
 				}
 			}
 		} else {
 			// One or more mandatory fields are empty. Therefore, display a the error message
-			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter all fields marked with a (*)</div>';
+			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលទិន្នន័យទាំងអស់ដែលមានសញ្ញា (*)</div>';
 			exit();
 		}
 	}

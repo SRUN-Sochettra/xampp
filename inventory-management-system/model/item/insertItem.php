@@ -27,7 +27,7 @@
 				// Valid quantity
 			} else {
 				// Quantity is not a valid number
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid number for quantity</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខបរិមាណឱ្យបានត្រឹមត្រូវ។</div>';
 				exit();
 			}
 			
@@ -36,7 +36,7 @@
 				// Valid float (unit price)
 			} else {
 				// Unit price is not a valid number
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid number for unit price</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខតម្លៃឯកតាឱ្យបានត្រឹមត្រូវ។</div>';
 				exit();
 			}
 			
@@ -44,7 +44,7 @@
 			if(!empty($discount)){
 				if(filter_var($discount, FILTER_VALIDATE_FLOAT) === false){
 					// Discount is not a valid floating point number
-					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter a valid discount amount</div>';
+					echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលលេខប្រាក់ឯកតាឱ្យបានត្រឹមត្រូវ។</div>';
 					exit();
 				}
 			}
@@ -65,7 +65,7 @@
 			if($stockStatement->rowCount() > 0){
 				//$row = $stockStatement->fetch(PDO::FETCH_ASSOC);
 				//$quantity = $quantity + $row['stock'];
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Item already exists in DB. Please click the <strong>Update</strong> button to update the details. Or use a different Item Number.</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>ទំនិញមាននៅក្នុង DB ហើយ។ សូមចុចប៊ូតុង <strong>Update</strong> ដើម្បីធ្វើការធ្វើបច្ចុប្បន្នភាព។ ឬប្រើលេខកូដទំនិញផ្សេងទៀត។</div>';
 				exit();
 			} else {
 				// Item does not exist, therefore, you can add it to DB as a new item
@@ -73,13 +73,13 @@
 				$insertItemSql = 'INSERT INTO item(itemNumber, itemName, discount, stock, unitPrice, status, description) VALUES(:itemNumber, :itemName, :discount, :stock, :unitPrice, :status, :description)';
 				$insertItemStatement = $conn->prepare($insertItemSql);
 				$insertItemStatement->execute(['itemNumber' => $itemNumber, 'itemName' => $itemName, 'discount' => $discount, 'stock' => $quantity, 'unitPrice' => $unitPrice, 'status' => $status, 'description' => $description]);
-				echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Item added to database.</div>';
+				echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>ទំនិញត្រូវបានបញ្ចូលទៅក្នុងមូលដ្ឋានទិន្នន័យ។</div>';
 				exit();
 			}
 
 		} else {
 			// One or more mandatory fields are empty. Therefore, display a the error message
-			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter all fields marked with a (*)</div>';
+			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលទំនិញទាំងអស់ដែលត្រូវបានសម្គាល់ដោយ (*)</div>';
 			exit();
 		}
 	}

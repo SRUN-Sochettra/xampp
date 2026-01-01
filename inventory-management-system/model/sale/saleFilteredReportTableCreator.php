@@ -17,16 +17,16 @@
 		$output = '<table id="saleFilteredReportsTable" class="table table-sm table-striped table-bordered table-hover" style="width:100%">
 					<thead>
 						<tr>
-							<th>Sale ID</th>
-							<th>Item Number</th>
-							<th>Customer ID</th>
-							<th>Customer Name</th>
-							<th>Item Name</th>
-							<th>Sale Date</th>
-							<th>Discount %</th>
-							<th>Quantity</th>
-							<th>Unit Price</th>
-							<th>Total Price</th>
+							<th>អត្តសញ្ញាណប័ណ្ណនៃការលក់</th>
+							<th>លេខកូដទំនិញ</th>
+							<th>អត្តសញ្ញាណប័ណ្ណអតិថិជន</th>
+							<th>ឈ្មោះអតិថិជន</th>
+							<th>ឈ្មោះទំនិញ</th>
+							<th>កាលបរិច្ឆេទលក់</th>
+							<th>ការបញ្ចុះតម្លៃ %</th>
+							<th>បរិមាណ</th>
+							<th>តម្លៃឯកតា</th>
+							<th>តម្លៃសរុប</th>
 						</tr>
 					</thead>
 					<tbody>';
@@ -57,7 +57,7 @@
 		$output .= '</tbody>
 						<tfoot>
 							<tr>
-								<th>Total</th>
+								<th>សរុប</th>
 								<th></th>
 								<th></th>
 								<th></th>

@@ -3,6 +3,7 @@ html {
   min-height: 100%;
 }
 
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -52,9 +53,31 @@ body {
 
 /* Changing the background color for tab/pills */
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color: #fff;
-    background-color: #ff6707;
+
+    
+/* Make fixed-top look like a floating pill */
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  width: auto;
+
+  border-radius: 16px;
+
+  /* Glass look */
+  background: rgba(20, 20, 20, 0.55) !important; /* dark glass */
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+
+  /* Light border like glass edge */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  /* Soft shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  /* Optional: smoother text */
+  -webkit-font-smoothing: antialiased;
 }
+ 
 
 /* Display the suggestions list on top of other elements */
 .customListDivWidth{
@@ -70,4 +93,28 @@ body {
 
 .blueText {
 	color: #2FA4E7;
+}
+
+.glass-nav {
+  /* Make fixed-top look like a floating pill */
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  width: auto;
+
+  border-radius: 16px;
+
+  /* Glass look */
+  background: rgba(20, 20, 20, 0.55) !important; /* dark glass */
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+
+  /* Light border like glass edge */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  /* Soft shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  /* Optional: smoother text */
+  -webkit-font-smoothing: antialiased;
 }

@@ -18,13 +18,13 @@
 			
 			// Check if username is empty
 			if($loginUsername == ''){
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter Username</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលឈ្មោះអ្នកប្រើ</div>';
 				exit();
 			}
 			
 			// Check if password is empty
 			if($loginPassword == ''){
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter Password</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលពាក្យសម្ងាត់</div>';
 				exit();
 			}
 			
@@ -44,16 +44,16 @@
 				$_SESSION['loggedIn'] = '1';
 				$_SESSION['fullName'] = $row['fullName'];
 				
-				echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Login success! Redirecting you to home page...</div>';
+				echo '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>ចូលគណនីជោគជ័យ! កំពុងបញ្ជូនអ្នកទៅទំព័រដើម...</div>';
 				exit();
 			} else {
-				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Incorrect Username / Password</div>';
+				echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>ឈ្មោះអ្នកប្រើ ឬ ពាក្យសម្ងាត់ មិនត្រឹមត្រូវ</div>';
 				exit();
 			}
 			
 			
 		} else {
-			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Please enter Username and Password</div>';
+			echo '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>សូមបញ្ចូលឈ្មោះអ្នកប្រើ និង ពាក្យសម្ងាត់</div>';
 			exit();
 		}
 	}
