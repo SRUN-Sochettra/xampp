@@ -418,7 +418,7 @@
 			  
 			  <div class="tab-pane fade" id="v-pills-search" role="tabpanel" aria-labelledby="v-pills-search-tab">
 				<div class="card card-outline-secondary my-4">
-				  <div class="card-header">ស្វែងរកទំនិញក្នុងស្តុក<button id="searchTablesRefresh" name="searchTablesRefresh" class="btn btn-warning float-right btn-sm">Refresh</button></div>
+				  <div class="card-header">ស្វែងរកទំនិញក្នុងស្តុក<button id="searchTablesRefresh" name="searchTablesRefresh" class="btn btn-warning float-right btn-sm">ផ្ទុកឡើងវិញ</button></div>
 				  <div class="card-body">										
 					<ul class="nav nav-tabs" role="tablist">
 						<li class="nav-item">
@@ -473,7 +473,7 @@
 			  
 			  <div class="tab-pane fade" id="v-pills-reports" role="tabpanel" aria-labelledby="v-pills-reports-tab">
 				<div class="card card-outline-secondary my-4">
-				  <div class="card-header">របាយការណ៍<button id="reportsTablesRefresh" name="reportsTablesRefresh" class="btn btn-warning float-right btn-sm">Refresh</button></div>
+				  <div class="card-header">របាយការណ៍<button id="reportsTablesRefresh" name="reportsTablesRefresh" class="btn btn-warning float-right btn-sm">ផ្ទុកឡើងវិញ</button></div>
 				  <div class="card-body">										
 					<ul class="nav nav-tabs" role="tablist">
 						<li class="nav-item">
